@@ -24,8 +24,12 @@ def power(num1, num2):
 
 # user Inputs
 def user_input():
-        num1 = int(input("Enter first number: "))
-        num2 = int(input("Enter second number: "))
+        try:
+            num1 = int(input("Enter first number: "))
+            num2 = int(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+            return user_input() # recursive call to get valid input
         return num1, num2
 
 def main():
